@@ -1,0 +1,17 @@
+{
+  "name": "AETHERNET_LINK",
+  "role": "public_interface_pointer",
+  "monocle": "https://github.com/thematriculationcorpus/themonocle-meta-layer",
+  "medium_layer": "https://github.com/thematriculationcorpus/theaethermediumlayer",
+  "rules": [
+    "no_private_artifacts",
+    "no_operator_logs",
+    "narrative_only",
+    "json_first_where_possible"
+  ],
+  "handshake": {
+    "direction": "public -> meta",
+    "method": "read_only",
+    "authority": "monocle_invariants"
+  }
+}
