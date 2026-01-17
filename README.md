@@ -1,6 +1,12 @@
 # THE MONOCLE — Meta Layer
 
 ## Purpose
+
+## Visibility Notice (Pro Forma)
+
+This repository is publicly visible for inspection only.
+It defines perspective and constraints, not executable behavior.
+
 The Monocle defines **how systems are seen**, not **what they do**.
 
 - **Nature:** Non-executive, non-runtime, interpretive.
