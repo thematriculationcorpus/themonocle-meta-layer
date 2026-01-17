@@ -1,0 +1,24 @@
+{
+  "name": "MONOCLE_CROSS_LINKS",
+  "v": "1.0",
+  "flow": [
+    "capacity -> threat",
+    "threat -> clamp",
+    "clamp -> conflict_resolver"
+  ],
+  "links": {
+    "capacity_lens": "lenses/CAPACITY_LENS.md",
+    "threat_modifier_lens": "lenses/THREAT_MODIFIER_LENS.json",
+    "conflict_resolver": "invariants/CONFLICT_RESOLVER.md"
+  },
+  "rules": [
+    "threat_overrides_capacity",
+    "clamp_precedes_resolution",
+    "resolution_requires_audit"
+  ],
+  "invariants": [
+    "no_direct_action_without_capacity",
+    "no_capacity_ignores_threat",
+    "no_resolution_without_log"
+  ]
+}
