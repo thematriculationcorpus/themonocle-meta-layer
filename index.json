@@ -1,0 +1,31 @@
+{
+  "name": "THE_MONOCLE",
+  "layer": "meta",
+  "branch": "(MONOCLE}",
+  "timezone": "UTC",
+  "visibility": "pro_forma_public",
+  "description": "Meta layer for lenses, invariants, and operator HUD. Non-executable.",
+  "structure": {
+    "lenses": {
+      "capacity": "lenses/CAPACITY_LENS.md",
+      "threat_modifier": "lenses/THREAT_MODIFIER_LENS.json",
+      "cross_links": "lenses/CROSS_LINKS.json"
+    },
+    "invariants": {
+      "conflict_resolver": "invariants/CONFLICT_RESOLVER.md"
+    },
+    "notes": {
+      "hud_snapshot": "notes/HUD_SNAPSHOT_TEMPLATE.md"
+    }
+  },
+  "rules": [
+    "json_preferred",
+    "no_runtime_code",
+    "no_operator_logs_tracked",
+    "utc_canonical"
+  ],
+  "links": {
+    "medium_layer": "https://github.com/thematriculationcorpus/theaethermediumlayer",
+    "public_interface": "https://github.com/thematriculationcorpus/aethernet"
+  }
+}
