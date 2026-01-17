@@ -16,6 +16,14 @@
     "clear": [],
     "notes": ""
   },
+  "bindings": {
+    "on_threat": {
+      "force_layer": "window",
+      "deny": ["vault", "door"],
+      "note": "threat clamps authority to service interface only"
+    }
+  },
+
   "threats": [
     "identity_compromise",
     "legal_escalation",
@@ -27,6 +35,7 @@
     "data_leak"
   ],
   "invariants": [
+    "window_only_on_threat",
     "threat_overrides_capacity",
     "clamp_first_explain_later",
     "no_auto_clear_without_evidence"
