@@ -1,70 +1,23 @@
 {
   "name": "COMPLIANCE_LAYERS",
   "v": "1.0",
-  "principle": "authority_inward_exposure_outward",
   "layers": {
     "vault": {
-      "role": "private_sector",
-      "description": "Trust corpus, internal governance, non-public records",
-      "exposure": "none",
-      "interfaces": [],
-      "allowed_artifacts": [
-        "trust_records",
-        "internal_accordance",
-        "private_ledgers"
-      ],
-      "forbidden": [
-        "public_contact",
-        "service_delivery",
-        "external_commitments"
-      ]
+      "scope": "private",
+      "rules": ["no_public_interface", "sealed_on_threat"]
     },
     "door": {
-      "role": "business_sector",
-      "description": "Entity-to-entity operations, contracts, statutory compliance",
-      "exposure": "controlled",
-      "interfaces": [
-        "vendors",
-        "banks",
-        "partners",
-        "regulators"
-      ],
-      "allowed_artifacts": [
-        "contracts",
-        "invoices",
-        "statutory_filings"
-      ],
-      "forbidden": [
-        "corpus_disclosure",
-        "doctrinal_material"
-      ]
+      "scope": "business",
+      "rules": ["controlled_access", "audit_required"]
     },
     "window": {
-      "role": "service_interface",
-      "description": "Public-facing service window; no authority lives here",
-      "exposure": "public",
-      "interfaces": [
-        "clients",
-        "customers",
-        "congregation",
-        "general_public"
-      ],
-      "allowed_artifacts": [
-        "service_outputs",
-        "narrative",
-        "published_media"
-      ],
-      "forbidden": [
-        "decision_authority",
-        "fund_control",
-        "private_records"
-      ]
+      "scope": "service_interface",
+      "rules": ["public_facing", "threat_only_surface"]
     }
   },
   "invariants": [
-    "vault_never_exposes_directly",
-    "window_has_no_authority",
-    "door_mediates_all_crossings",
-    "no_layer_skips_another"
+    "vault_never_public",
+    "threat_forces_window",
+    "layer_downgrade_only"
   ]
 }

@@ -11,6 +11,7 @@
     "exit"
   ],
   "transitions": [
+    { "from": "threat_detected", "to": "clamped", "on": "force_window_layer" },
     { "from": "idle", "to": "capacity_checked", "on": "intent" },
     { "from": "capacity_checked", "to": "threat_detected", "on": "threat_signal" },
     { "from": "capacity_checked", "to": "resolved", "on": "no_threat" },
@@ -19,6 +20,7 @@
     { "from": "resolved", "to": "exit", "on": "action_complete" }
   ],
   "guards": [
+    "threat_forces_window_layer",
     "capacity_required",
     "threat_overrides_capacity",
     "clamp_precedes_resolution",
