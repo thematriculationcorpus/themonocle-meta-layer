@@ -1,0 +1,16 @@
+# No runtime
+node_modules/
+dist/
+build/
+runtime/
+logs/
+*.log
+
+# Secrets / local
+.env
+*.local
+*.bak
+
+# OS / editor
+.DS_Store
+.vscode/
