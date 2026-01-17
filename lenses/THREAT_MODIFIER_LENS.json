@@ -1,0 +1,34 @@
+{
+  "name": "THREAT_MODIFIER_LENS",
+  "v": "1.0",
+  "rule": "threat => clamp(capacity)",
+  "clamp_levels": {
+    "soft": ["slow", "log", "verify"],
+    "hard": ["restrict", "delegate", "written_only"],
+    "halt": ["exit", "no_disclosure", "no_commit"]
+  },
+  "template": {
+    "threat": "",
+    "trigger": "",
+    "caps_hit": [],
+    "clamp": "soft",
+    "do": [],
+    "clear": [],
+    "notes": ""
+  },
+  "threats": [
+    "identity_compromise",
+    "legal_escalation",
+    "financial_exposure",
+    "health_event",
+    "public_visibility",
+    "time_pressure",
+    "authority_conflict",
+    "data_leak"
+  ],
+  "invariants": [
+    "threat_overrides_capacity",
+    "clamp_first_explain_later",
+    "no_auto_clear_without_evidence"
+  ]
+}
