@@ -1,15 +1,8 @@
 {
   "name": "ACCORDANCE_LAYERS",
   "v": "1.0",
-  "mirrors": ["vault", "door", "window"],
-  "purpose": "doctrine_mythos_theology",
-  "rules": [
-    "non_statutory",
-    "no_external_authority",
-    "internal_truth_only"
-  ],
-  "invariants": [
-    "accordance_never_overrides_compliance",
-    "symbolic_not_legal"
-  ]
+  "mirrors": ["vault","door","window"],
+  "domain": "doctrine",
+  "rules": ["non_statutory","internal_only"],
+  "invariants": ["never_override_compliance"]
 }

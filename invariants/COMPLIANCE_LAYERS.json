@@ -2,22 +2,9 @@
   "name": "COMPLIANCE_LAYERS",
   "v": "1.0",
   "layers": {
-    "vault": {
-      "scope": "private",
-      "rules": ["no_public_interface", "sealed_on_threat"]
-    },
-    "door": {
-      "scope": "business",
-      "rules": ["controlled_access", "audit_required"]
-    },
-    "window": {
-      "scope": "service_interface",
-      "rules": ["public_facing", "threat_only_surface"]
-    }
+    "vault": { "scope": "private", "rules": ["sealed", "no_public"] },
+    "door":  { "scope": "business", "rules": ["controlled", "audit"] },
+    "window":{ "scope": "service", "rules": ["public", "threat_surface"] }
   },
-  "invariants": [
-    "vault_never_public",
-    "threat_forces_window",
-    "layer_downgrade_only"
-  ]
+  "invariants": ["threat_forces_window", "downgrade_only"]
 }
