@@ -14,3 +14,6 @@ logs/
 # OS / editor
 .DS_Store
 .vscode/
+
+# operator-only logs
+.logs/
