@@ -1,4 +1,23 @@
 {
+  "name": "AETHIEA_OPSYS",
+  "clock": "UTC",
+  "layers": {
+    "meta": "themonocle-meta-layer",
+    "medium": "theaethermediumlayer",
+    "public": "aethernet"
+  },
+  "authority_flow": [
+    "meta -> medium",
+    "medium -> public"
+  ],
+  "rules": [
+    "no_reverse_authority",
+    "public_read_only",
+    "meta_sets_constraints"
+  ]
+}
+
+{
   "name": "AETHIEA_OPSYS_LINKS",
   "v": "1.0",
   "timezone": "UTC",
