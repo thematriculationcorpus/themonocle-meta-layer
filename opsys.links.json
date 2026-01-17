@@ -1,0 +1,36 @@
+{
+  "name": "AETHIEA_OPSYS_LINKS",
+  "v": "1.0",
+  "timezone": "UTC",
+  "layers": {
+    "meta": {
+      "name": "THE_MONOCLE",
+      "repo": "https://github.com/thematriculationcorpus/themonocle-meta-layer",
+      "role": "lenses_invariants_hud",
+      "authority": "invariants"
+    },
+    "medium": {
+      "name": "AETHER_MEDIUM",
+      "repo": "https://github.com/thematriculationcorpus/theaethermediumlayer",
+      "role": "consolidation_architecture",
+      "authority": "canonical_structure"
+    },
+    "public": {
+      "name": "AETHERNET",
+      "repo": "https://github.com/thematriculationcorpus/aethernet",
+      "role": "public_interface_narrative",
+      "authority": "read_only"
+    }
+  },
+  "flow": [
+    "public -> meta (read_only)",
+    "meta -> medium (constraints)",
+    "medium -> public (exposed_surface)"
+  ],
+  "rules": [
+    "no_private_artifacts_cross_layers",
+    "no_operator_logs_exposed",
+    "meta_invariants_override",
+    "utc_only"
+  ]
+}
