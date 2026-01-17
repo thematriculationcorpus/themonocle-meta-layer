@@ -1,0 +1,32 @@
+{
+  "name": "MONOCLE_STATE_MACHINE",
+  "v": "1.0",
+  "timezone": "UTC",
+  "states": [
+    "idle",
+    "capacity_checked",
+    "threat_detected",
+    "clamped",
+    "resolved",
+    "exit"
+  ],
+  "transitions": [
+    { "from": "idle", "to": "capacity_checked", "on": "intent" },
+    { "from": "capacity_checked", "to": "threat_detected", "on": "threat_signal" },
+    { "from": "capacity_checked", "to": "resolved", "on": "no_threat" },
+    { "from": "threat_detected", "to": "clamped", "on": "apply_clamp" },
+    { "from": "clamped", "to": "resolved", "on": "conflict_resolver" },
+    { "from": "resolved", "to": "exit", "on": "action_complete" }
+  ],
+  "guards": [
+    "capacity_required",
+    "threat_overrides_capacity",
+    "clamp_precedes_resolution",
+    "utc_only"
+  ],
+  "artifacts": {
+    "capacity_lens": "lenses/CAPACITY_LENS.md",
+    "threat_lens": "lenses/THREAT_MODIFIER_LENS.json",
+    "conflict_resolver": "invariants/CONFLICT_RESOLVER.md"
+  }
+}
